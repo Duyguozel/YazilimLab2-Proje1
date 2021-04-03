@@ -1,0 +1,31 @@
+header
+{
+	height: 40px;
+	font-size: 24px;
+	text-align: center;
+	color: orchid;
+	margin-bottom: 30px;
+}
+.container
+{
+	height: 100px;
+}
+input
+{
+    width: 500px;
+    height: 40px;
+    margin-left: 150px;
+    border: 1px solid slateblue;
+    border-radius: 10px;
+}
+.btnGiris{
+	padding: 3 3px; /*yukarıdan aşağıdan 0px ; soldan sağdan 3px boşluk ver*/
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 5px;
+}
+.frekans {
+	height: 400px;
+	text-align: center;
+	border: 1px solid black;
+}

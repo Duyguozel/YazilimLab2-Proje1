@@ -1,0 +1,149 @@
+<html>
+  <head>
+     <title>AŞAMA 4</title>
+     <html>
+<head>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <!--<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>-->
+    <title>WEB İNDEXLEME</title>
+    <!-- Gerekli Meta Etiketleri  -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Bootstarp CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    
+    <style>
+    header
+      {
+        height: 40px;
+        font-size: 24px;
+        text-align: center;
+        color: orchid;
+        margin-bottom: 30px;
+      }
+      .container
+      {
+        height: 100px;
+      }
+
+       input
+      {
+          width: 500px;
+          height: 40px;
+          margin-left: 375px;
+          border: 1px solid slateblue;
+          border-radius: 10px;
+      }
+      .btn{
+        padding: 3 3px; /yukarıdan aşağıdan 0px ; soldan sağdan 3px boşluk ver/
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-left: 40px;
+        margin-top: 5px;
+      }
+      .enCok {
+        min-height: 400px;
+        text-align: center;
+        border: 1px solid black;
+        font-weight: bold;
+        font-size: 36px;
+      }
+      .col-4{
+        width: 400px;
+        height: 200px;
+        border: 1px solid black;
+      }
+      td{
+        font-size:18px; 
+      }
+
+    </style>
+   
+</head>
+
+  </head> 
+  <body style="background-color:#565656;" >
+
+     <div class="container">
+    <header class=" fixed-top mb-5" style="background-color:#040C29; color: #A5A5A5; text-align:center">
+      <!-- başlıkta arka plana koyu renk verildi fixed-top ile başlık üste sabitlendi, aşağıdan 5br boşluk bırakıldı-->
+      ALT LİNKLERDE BENZERLİK ARAMA
+    </header>
+   
+
+    <section class="mt-5" style="background-color: #F6F7C5; width: 1300px">
+
+            <div class="mb-5" style="background-color: #F6F7C5; width: 1300px">
+             <form  action="/siteIndexing" method="POST" style="width: 1300px"><br><br><br>
+             <input type="text" name="url1" placeholder="Ana URL'i giriniz" style="background-color:#FCE6F8"><br>
+             <button id="urlAl" class="btn" style="color:#E7CFFF; background-color:#332343; margin-left:560px"
+              type="submit">HESAPLA</button>
+             </form>
+             </div>
+            <div class="row" style="background-color: #F6F7C5; width: 1200px; height: 525px; margin-left:50px;">
+         
+            <div style="background-color: #F6F7C5; color: #7B84B7">
+            <h3 style="text-align: center; background-color: #F6F7C5; color:#563D6E">TÜM SKORLAR BÜYÜKTEN KÜÇÜĞE YAZDIRILIYOR....</h3>
+               {{ page4_function_run }}
+            </div>
+
+            <div style="background-color: #F6F7C5; color: #7B84B7">
+            <h3 style="text-align: center; background-color: #F6F7C5; color:#563D6E">Anahtar Kelimelerin Diğer Lİnklerde Geçme Sayıları Yazdırılıyor....</h3>
+            {% for ortak in ortaklarS %}
+             {{ ortak }}
+             <br>
+            {% endfor %}
+            </tr>                 
+            </div>
+            <hr style="width: 500px ; margin-left: 400px; background-color: #F6F7C5 "><br><br><br>
+            <table class="table table-striped" style="margin-bottom:150px">
+            <caption style="background-color: #F6F7C5">Karşılaştırma</caption>
+            <h4 style="background-color: #F6F7C5; color: #563D6E">ANA URL İLE BENZERLİK TABLOSU</h4>
+            <thead style="margin-right: 150px; background-color: #F6F7C5; margin-bottom:150px">
+              <tr>
+              </tr>
+            </thead>
+
+            <tbody style="background-color: #F6F7C5; margin-bottom:150px"> 
+            <tr style="margin-bottom:150px; background-color: #FFFF73">
+            <td>Derinlik 1</td>
+            {% for skor1 in skor1_All %}
+             <td>{{ skor1 }}</td>
+            {% endfor %}
+            </tr>         
+          
+
+            <tr style="margin-bottom:150px ; background-color:#FFFFE5">
+            <td>Derinlik 2</td>
+            {% for skor2 in skor2_All %}
+             <td>{{ skor2 }}</td>
+            {% endfor %}
+            </tr>
+
+            <tr style="margin-bottom:150px; background-color: #FFFF73">
+            <td>Derinlik 3</td>
+            {% for skor3 in skor3_All %}
+             <td>{{ skor3 }}</td>
+            {% endfor %}
+            </tr>
+             
+                    
+            </tbody>
+          </table>
+      </div> 
+    </section>
+
+
+  </div>
+
+    
+     <!-- JavaScript  Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  </body>
+</html>

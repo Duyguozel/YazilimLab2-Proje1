@@ -1,0 +1,202 @@
+<html>
+  <head>
+     <title>AŞAMA 4</title>
+     <html>
+<head>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <!--<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>-->
+    <title>WEB İNDEXLEME</title>
+    <!-- Gerekli Meta Etiketleri  -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Bootstarp CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    
+    <style>
+    header
+      {
+        height: 40px;
+        font-size: 24px;
+        text-align: center;
+        color: orchid;
+        margin-bottom: 30px;
+      }
+      .container
+      {
+        height: 100px;
+      }
+
+       input
+      {
+          width: 500px;
+          height: 40px;
+          margin-left: 375px;
+          border: 1px solid slateblue;
+          border-radius: 10px;
+      }
+      .btn{
+        padding: 3 3px; /yukarıdan aşağıdan 0px ; soldan sağdan 3px boşluk ver/
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-left: 40px;
+        margin-top: 5px;
+      }
+      .enCok {
+        min-height: 400px;
+        text-align: center;
+        border: 1px solid black;
+        font-weight: bold;
+        font-size: 36px;
+      }
+      .col-4{
+        width: 400px;
+        height: 200px;
+        border: 1px solid black;
+      }
+      td{
+        font-size:18px; 
+      }
+
+    </style>
+   
+</head>
+
+  </head> 
+  <body style="background-color:#A4DE8F;" >
+
+     <div class="container">
+    <header class=" fixed-top mb-5" style="background-color:#D7C3F0; color: #2F5631">
+      <!-- başlıkta arka plana koyu renk verildi fixed-top ile başlık üste sabitlendi, aşağıdan 5br boşluk bırakıldı-->
+      EN COK GECEN KELIMELER
+    </header>
+   
+
+    <section class="mt-5">
+
+      <div class="mb-5">
+        <form  action="/siteIndexing" method="POST" style="width: 500px"><br><br>
+        <input type="text" name="url1" placeholder="Ana URL'i giriniz"><br>
+         <button id="urlAl" class="btn" style="color:#E9FBEA; background-color:#2F5631; margin-left:560px"
+          type="submit">HESAPLA</button>
+        </form>
+      </div>
+      <div class="row">
+         
+         <div>
+         <h3>TÜM SKORLAR BÜYÜKTEN KÜÇÜĞE YAZDIRILIYOR....</h3>
+            %{{ page4_function_run }}
+         </div>
+         <hr style="width: 500px"><br><br><br>
+         <table class="table table-striped" style="margin-right: 300px">
+          <caption>Karşılaştırma</caption>
+          <h4>ANA URL İLE BENZERLİK TABLOSU</h4>
+          <thead style="margin-right: 150px">
+            <tr>
+            </tr>
+          </thead>
+
+          <tbody> 
+          <tr>
+          <td>Derinlik 1</td>
+          {% for skor1 in skor1_All %}
+           <td>{{ skor1 }}</td>
+          {% endfor %}
+          </tr>         
+          
+
+          <tr>
+          <td>Derinlik 2</td>
+          {% for skor2 in skor2_All %}
+           <td>{{ skor2 }}</td>
+          {% endfor %}
+          </tr>
+
+          <tr>
+          <td>Derinlik 3</td>
+          {% for skor3 in skor3_All %}
+           <td>{{ skor3 }}</td>
+          {% endfor %}
+          </tr>
+             
+                    
+          </tbody>
+        </table>
+
+      <!--
+        <div class="col-4 mx-4 mb-4">
+         <h3>Ana Url - 1.URL</h3> 
+           {% if page4_function_run %}
+            <p>BENZERLİK ORANI: % {{page4_function_run}}</p>
+            {% else %}
+            <p></p>
+            {% endif %}
+        </div>
+      
+        <div class="col-4 mx-4 mb-4">
+         <h3>Ana Url - 2.URL</h3> 
+           {% if page4_function_run %}
+            <p>BENZERLİK ORANI: % {{page4_function_run}}</p>
+            {% else %}
+            <p></p>
+            {% endif %}
+        </div>
+      
+      
+        <div class="col-4 mb-4">
+         <h3>Ana Url - 3.URL</h3>
+           {% if page4_function_run %}
+            <p>BENZERLİK ORANI: % {{page4_function_run}}</p>
+            {% else %}
+            <p></p>
+            {% endif %}
+        </div>
+           
+      </div>
+      <div class="row">
+
+        <div class="col-4 mx-4 mb-4">
+         <h3>Ana Url - 4.URL</h3> 
+           {% if page4_function_run %}
+            <p>BENZERLİK ORANI: % {{page4_function_run}}</p>
+            {% else %}
+            <p></p>
+            {% endif %}
+        </div>
+      
+        <div class="col-4 mx-4 mb-4">
+         <h3>Ana Url - 5.URL</h3> 
+           {% if page4_function_run %}
+            <p>BENZERLİK ORANI: % {{page4_function_run}}</p>
+            {% else %}
+            <p></p>
+            {% endif %}
+        </div>
+      
+      
+        <div class="col-4 mb-4">
+         <h3>Ana Url - 6.URL</h3>
+           {% if page4_function_run %}
+            <p>BENZERLİK ORANI: % {{page4_function_run}}</p>
+            {% else %}
+            <p></p>
+            {% endif %}
+        </div>
+
+-->
+      </div> 
+    </section>
+
+
+  </div>
+
+    
+     <!-- JavaScript  Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  </body>
+</html>

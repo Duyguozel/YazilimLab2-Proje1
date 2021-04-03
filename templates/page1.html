@@ -1,0 +1,91 @@
+<html>
+<head>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <title>WEB İNDEXLEME</title>
+    <!-- Gerekli Meta Etiketleri  -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Bootstarp CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    
+    <style>
+    header
+      {
+        height: 40px;
+        font-size: 24px;
+        text-align: center;
+        color: orchid;
+        margin-bottom: 30px;
+      }
+      .container
+      {
+        height: 100px;
+      }
+
+       input
+      {
+          width: 500px;
+          height: 40px;
+          margin-left: 370px;
+          border: 1px solid slateblue;
+          border-radius: 10px;
+      }
+      .btnGiris{
+        padding: 3 3px; /*yukarıdan aşağıdan 0px ; soldan sağdan 3px boşluk ver*/
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      .frekans {
+        min-height: 400px;
+        text-align: center;
+        border: 1px solid black;
+      }
+
+    </style>
+   
+</head>
+
+<body  style="background-color: #EDD9FE ">
+  <div class="container">
+    <header class="bg-dark fixed-top mb-5" style="color: #8F839D">
+      <!-- başlıkta arka plana koyu renk verildi fixed-top ile başlık üste sabitlendi, aşağıdan 5br boşluk bırakıldı-->
+      FREKANS HESAPLAMA
+    </header>
+    <form action="/frequency" name="frekansF" method="POST">
+
+    <section class="mt-5">
+
+      <div class="mb-5"><br>
+        <input type="text" name="urlAlani" placeholder="Url'i giriniz" id="urlAlani1">
+        <button id="urlAl" class="btn" style="color:#FFFFFF; background-color:#8F839D;"
+          type="submit">Hesapla</button>
+      </div>
+      <div class="row">
+        <div class="frekans mb-3 mr-5 col-12 bg-secondary"> 
+          <h3 style="color: #494250; background-color:#8F839D; border-radius:5px">KELİMELERİN FREKANSLARI</h3> <!-- backPage1 dekini buraya taşıdım-->
+           {% if page1_function_run %}
+            <p style="color: #FFFFFF">FREKANSLARI: {{page1_function_run}}</p>
+            {% else %}
+            <p></p>
+            {% endif %}
+            
+        </div>
+      </div> 
+    </section>
+    </form>
+
+  </div>
+
+     <!-- JavaScript  Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
